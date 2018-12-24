@@ -1,0 +1,58 @@
+apply plugin: 'com.android.library'
+
+android {
+    sourceSets {
+        main {
+            jniLibs.srcDirs = ['libs']
+        }
+    }
+    compileSdkVersion 26
+    defaultConfig {
+        minSdkVersion 16
+        targetSdkVersion 26
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+    }
+    //添加如下配置就ok了
+    lintOptions {
+        checkReleaseBuilds false
+        abortOnError false
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+
+    configurations.all {
+        resolutionStrategy.eachDependency { DependencyResolveDetails details ->
+            def requested = details.requested
+            if (requested.group == 'com.android.support') {
+                if (!requested.name.startsWith("multidex")) {
+                    details.useVersion '26.1.0'
+                }
+            }
+        }
+    }
+}
+
+/**
+ * so库的支持 ----------
+ */
+repositories {
+    flatDir {
+        dirs 'libs' //this way we can find the .aar file in libs folder
+    }
+}
+
+dependencies {
+    api fileTree(include: ['*.jar'], dir: 'libs')
+    implementation 'com.android.support:appcompat-v7:26.1.0'
+    api files('libs/EZOpenSDK_V4.8.4.20180810.jar')
+    api files('libs/jmdns-3.4.1.jar')
+    // 二维码工具
+    api 'cn.bingoogolapple:bga-qrcode-zxing:1.2.1'
+    api 'com.github.bumptech.glide:glide:4.5.0'
+    annotationProcessor 'com.github.bumptech.glide:compiler:4.5.0'
+    api 'com.google.code.gson:gson:2.8.1'
+}

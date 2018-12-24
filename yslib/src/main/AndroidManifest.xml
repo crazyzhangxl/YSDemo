@@ -1,0 +1,18 @@
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="ezviz.ezopensdk" >
+    //网络权限
+    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
+    <uses-permission android:name="android.permission.RECORD_AUDIO"/>
+    <uses-permission android:name="android.permission.READ_PHONE_STATE"/>
+
+    //存储权限
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+
+    //wifi 状态权限
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE"/>
+    <uses-permission android:name="android.permission.CHANGE_WIFI_STATE"/>
+    <uses-permission android:name="android.permission.CHANGE_WIFI_MULTICAST_STATE"/>
+    //热点配网扫描wifi需要使用
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION"/>
+</manifest>

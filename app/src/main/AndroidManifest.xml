@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.example.apple.ysdemo">
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:name=".app.MyApp"
+        android:theme="@style/AppTheme">
+        <activity android:name=".MainActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+
+        <!-- #########################萤火虫平台活动开始#####################-->
+        <activity
+            android:name="com.example.apple.ysdemo.ys.LoginSelectActivity"
+            android:configChanges="orientation|keyboardHidden"
+            android:screenOrientation="portrait">
+        </activity>
+
+        <activity
+            android:name="com.videogo.main.EzvizWebViewActivity"
+            android:configChanges="orientation|keyboardHidden"
+            android:screenOrientation="portrait"/>
+
+        <activity
+            android:name="com.example.apple.ysdemo.ys.remoteplayback.list.PlayBackListActivity"
+            android:configChanges="orientation|keyboardHidden|screenSize"
+            android:screenOrientation="nosensor"/>
+        <activity
+            android:name="com.example.apple.ysdemo.ys.ui.cameralist.EZCameraListActivity"
+            android:screenOrientation="portrait"/>
+        <activity
+            android:name="com.example.apple.ysdemo.ys.ui.realplay.EZRealPlayActivity"
+            android:configChanges="orientation|keyboardHidden|screenSize"
+            android:screenOrientation="portrait"/>
+        <activity
+            android:name="com.example.apple.ysdemo.ys.ui.message.EZMessageImageActivity2"
+            android:screenOrientation="portrait">
+        </activity>
+        <activity
+            android:name="com.example.apple.ysdemo.ys.ui.message.EZMessageActivity2"
+            android:screenOrientation="portrait">
+        </activity>
+        <activity
+            android:name="com.example.apple.ysdemo.ys.ui.remoteplayback.EZRemotePlayBackActivity"
+            android:configChanges="orientation|keyboardHidden|screenSize"
+            android:screenOrientation="portrait"/>
+        <activity
+            android:name="com.example.apple.ysdemo.ys.devicemgt.EZDeviceSettingActivity"
+            android:screenOrientation="portrait">
+        </activity>
+        <activity
+            android:name="com.example.apple.ysdemo.ys.devicemgt.ModifyDeviceNameActivity"
+            android:screenOrientation="portrait"/>
+
+        <activity
+            android:name="com.example.apple.ysdemo.ys.scan.main.CaptureActivity"
+            android:screenOrientation="portrait"/>
+        <activity
+            android:name="com.example.apple.ysdemo.ys.ui.devicelist.SeriesNumSearchActivity"
+            android:launchMode="singleTask"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustResize"/>
+        <activity
+            android:name="com.example.apple.ysdemo.ys.ui.devicelist.AutoWifiNetConfigActivity"
+            android:screenOrientation="portrait"/>
+        <activity
+            android:name="com.example.apple.ysdemo.ys.ui.devicelist.AutoWifiConnectingActivity"
+            android:screenOrientation="portrait"/>
+        <activity
+            android:name="com.example.apple.ysdemo.ys.ui.devicelist.AutoWifiPrepareStepOneActivity"
+            android:screenOrientation="portrait"/>
+        <activity
+            android:name="com.example.apple.ysdemo.ys.ui.devicelist.AutoWifiResetActivity"
+            android:screenOrientation="portrait"/>
+
+        <receiver
+            android:name="com.example.apple.ysdemo.ys.EzvizBroadcastReceiver"
+            android:enabled="true"
+            android:exported="false">
+            <intent-filter>
+                <action android:name="com.example.apple.ysdemo.ys.action.ADD_DEVICE_SUCCESS_ACTION"/>
+                <action android:name="com.example.apple.ysdemo.ys.action.OAUTH_SUCCESS_ACTION"/>
+                <action android:name="android.net.conn.CONNECTIVITY_CHANGE"/>
+            </intent-filter>
+        </receiver>
+        <activity
+            android:name="com.example.apple.ysdemo.ys.devicemgt.EZUpgradeDeviceActivity"
+            android:label="@string/title_activity_ezupgrade_device">
+        </activity>
+        <activity
+            android:name="com.example.apple.ysdemo.ys.ui.lanDevice.LanDeviceActivity"
+            android:screenOrientation="portrait"/>
+        <activity
+            android:name="com.example.apple.ysdemo.ys.ui.lanDevice.LanDevicePlayActivity"
+            android:screenOrientation="portrait"/>
+
+        <activity
+            android:name="com.example.apple.ysdemo.ys.ui.lanDevice.LanDeviceActivateActivity"
+            android:screenOrientation="portrait">
+        </activity>
+        <activity
+            android:name="com.example.apple.ysdemo.ys.ui.devicelist.APWifiConfigActivity"
+            android:screenOrientation="portrait">
+        </activity>
+
+        <!-- #########################萤火虫平台活动结束#####################-->
+    </application>
+
+</manifest>
